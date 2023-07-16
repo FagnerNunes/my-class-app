@@ -10,7 +10,7 @@ export default function Login() {
                     {
                         height: 200,
                         objectFit: 'contain',
-                        width: 200,
+                        width: 150,
                     }
                 }
                 source={require('../../images/logo-transparente.png')}
@@ -22,7 +22,7 @@ export default function Login() {
                     <Image
                         style={
                             {
-                                height: 230,
+                                height: 300,
                                 objectFit: 'contain',
                                 width: 230,
                             }
@@ -45,20 +45,20 @@ export default function Login() {
                         placeholder='Digite sua senha..'
                         style={styles.containerCampos.campos.input}
                     />
-                    <Pressable onPress={() => alert("Vamos recuperar sua senha..")}>
+                    <Pressable onPress={() => alert("Recuperar senha")}>
                         <Text style={styles.containerCampos.campos.recuperarSenha}>Esqueci minha senha</Text>
                     </Pressable>
                 </View>
 
                 <View style={styles.containerCampos.campos}>
-                    <Pressable style={styles.containerCampos.campos.containerBtn} onPress={() => alert("Vamos recuperar sua senha..")}>
+                    <Pressable style={styles.containerCampos.campos.containerBtn} onPress={() => alert("Entrar")}>
                         <Text style={styles.containerCampos.campos.btn}>Entrar</Text>
                     </Pressable>
                 </View>
 
                 <View style={styles.containerCampos.campos}>
                     <Text style={styles.containerCampos.campos.textoBtn}>É novo por aqui?</Text>
-                    <Pressable style={styles.containerCampos.campos.containerBtn2} onPress={() => alert("Vamos recuperar sua senha..")}>
+                    <Pressable style={styles.containerCampos.campos.containerBtn2} onPress={() => alert("Cadastrar")}>
                         <Text style={styles.containerCampos.campos.btn}>Cadastre-se</Text>
                     </Pressable>
                 </View>
@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
                 display: 'flex',
                 height: 40,
                 justifyContent: 'center',
+                marginTop: 10,
             },
 
             containerBtn2: {
