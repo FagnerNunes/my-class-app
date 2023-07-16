@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "my-class-app",
+    "slug": "my-class-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/my-class-logo.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/my-class-logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/my-class-logo.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/my-class-logo.png"
+    }
+  }
+}
