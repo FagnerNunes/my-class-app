@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image, TextInput, SafeAreaView, Pressable } fro
 import React from 'react';
 
 import Button from '../style-components/Button';
+import Input from '../style-components/Input';
 
 export default function Login() {
     return (
@@ -24,7 +25,7 @@ export default function Login() {
                     <Image
                         style={
                             {
-                                height: 300,
+                                height: 250,
                                 objectFit: 'contain',
                                 width: 230,
                             }
@@ -34,36 +35,62 @@ export default function Login() {
                 </View>
 
                 <View style={styles.containerCampos.campos}>
-                    <Text style={styles.containerCampos.campos.label}>Usuário</Text>
-                    <TextInput
-                        placeholder='Digite seu nome de usuário..'
-                        style={styles.containerCampos.campos.input}
+                    <Text style={
+                        {
+                            fontSize: 17,
+                            height: 30,
+                        }
+                    }>Usuário</Text>
+                    <Input
+                        plc="Digite seu nome de usuário.."
+                        corBorda="#0496FF"
                     />
                 </View>
 
                 <View style={styles.containerCampos.campos}>
-                    <Text style={styles.containerCampos.campos.label}>Senha</Text>
-                    <TextInput
-                        placeholder='Digite sua senha..'
-                        style={styles.containerCampos.campos.input}
+                    <Text style={
+                        {
+                            fontSize: 17,
+                            height: 30,
+                        }
+                    }>Senha</Text>
+                    <Input
+                        plc="Digite sua senha.."
+                        corBorda="#0496FF"
                     />
                     <Pressable onPress={() => alert("Recuperar senha")}>
-                        <Text style={styles.containerCampos.campos.recuperarSenha}>Esqueci minha senha</Text>
+                        <Text style={
+                            {
+                                color: '#555',
+                                fontSize: 15,
+                                marginTop: 5,
+                                padding: 5,
+                                textAlign: 'right',
+                                textDecorationLine: 'underline',
+                            }
+                        }>Esqueci minha senha</Text>
                     </Pressable>
                 </View>
 
                 <View style={styles.containerCampos.campos}>
                     <Button
-                        bgBtn="#006BA6"
+                        background="#006BA6"
+                        func={() => alert('Botão entrar')}
                         nome="Entrar"
                     />
                 </View>
 
                 <View style={styles.containerCampos.campos}>
-                    <Text style={styles.containerCampos.campos.textoBtn}>É novo por aqui?</Text>
+                    <Text style={
+                            {
+                                fontSize: 16,
+                                marginTop: 10,
+                            }
+                        }>É novo por aqui?</Text>
                     <Button
-                        bgBtn="#053048"
-                        nome="Entrar"
+                        background="#053048"
+                        func={() => alert('Botão cadastrar')}
+                        nome="Cadastre-se"
                     />
 
                 </View>
@@ -86,33 +113,5 @@ const styles = StyleSheet.create({
         gap: 20,
         paddingLeft: 30,
         paddingRight: 30,
-
-        campos: {
-
-            label: {
-                fontSize: 17,
-                height: 30,
-            },
-            input: {
-                borderColor: '#0496ff',
-                borderRadius: 7,
-                borderWidth: 1,
-                color: '#053048',
-                fontSize: 16,
-                height: 40,
-                padding: 10,
-            },
-            recuperarSenha: {
-                color: '#555',
-                fontSize: 14,
-                padding: 5,
-                textDecorationLine: 'underline',
-            },
-
-            textoBtn: {
-                fontSize: 16,
-                paddingBottom: 5,
-            },
-        }
     }
 })

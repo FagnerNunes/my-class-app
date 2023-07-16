@@ -1,20 +1,25 @@
 import { Pressable, Text } from 'react-native'
 import React from 'react'
 
-const Button = ({bgBtn, nome}) => {
+const Button = ({nome, background, corBorda, widthBorda, func}) => {
+
+
   return (
-    <Pressable style={
-        {
-            alignItems: 'center',
-            backgroundColor: bgBtn,
-            borderColor: '#006BA6',
-            borderRadius: 7,
-            display: 'flex',
-            height: 40,
-            justifyContent: 'center',
-            marginTop: 10,
+    <Pressable
+        style={
+            {
+                alignItems: 'center',
+                backgroundColor: background,
+                borderRadius: 7,
+                display: 'flex',
+                height: 40,
+                justifyContent: 'center',
+                marginTop: 10,
+            }
+
         }
-    }>
+        onPress={func}
+    >
         <Text style={
             {
                 color: '#fff',
