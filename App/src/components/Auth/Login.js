@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View, Image, TextInput, SafeAreaView, Pressable } from 'react-native'
 import React from 'react';
 
+import Button from '../style-components/Button';
+
 export default function Login() {
     return (
         <View style={styles.container}>
@@ -51,16 +53,19 @@ export default function Login() {
                 </View>
 
                 <View style={styles.containerCampos.campos}>
-                    <Pressable style={styles.containerCampos.campos.containerBtn} onPress={() => alert("Entrar")}>
-                        <Text style={styles.containerCampos.campos.btn}>Entrar</Text>
-                    </Pressable>
+                    <Button
+                        bgBtn="#006BA6"
+                        nome="Entrar"
+                    />
                 </View>
 
                 <View style={styles.containerCampos.campos}>
                     <Text style={styles.containerCampos.campos.textoBtn}>É novo por aqui?</Text>
-                    <Pressable style={styles.containerCampos.campos.containerBtn2} onPress={() => alert("Cadastrar")}>
-                        <Text style={styles.containerCampos.campos.btn}>Cadastre-se</Text>
-                    </Pressable>
+                    <Button
+                        bgBtn="#053048"
+                        nome="Entrar"
+                    />
+
                 </View>
 
             </SafeAreaView>
@@ -104,37 +109,9 @@ const styles = StyleSheet.create({
                 textDecorationLine: 'underline',
             },
 
-            containerBtn: {
-                alignItems: 'center',
-                backgroundColor: '#006BA6',
-                borderColor: '#006BA6',
-                borderRadius: 7,
-                display: 'flex',
-                height: 40,
-                justifyContent: 'center',
-                marginTop: 10,
-            },
-
-            containerBtn2: {
-                alignItems: 'center',
-                backgroundColor: '#053048',
-                borderColor: '#006BA6',
-                borderRadius: 7,
-                display: 'flex',
-                height: 40,
-                justifyContent: 'center',
-            },
-
             textoBtn: {
                 fontSize: 16,
                 paddingBottom: 5,
-            },
-
-            btn: {
-                color: '#fff',
-                fontSize: 18,
-                fontWeight: 'bold',
-                letterSpacing: 0.5,
             },
         }
     }
