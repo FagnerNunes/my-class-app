@@ -12,6 +12,7 @@ export default function Input({plc, corBorda}) {
                 color: '#053048',
                 fontSize: 16,
                 height: 40,
+                margin: 1,
                 padding: 10,
             }
         }
