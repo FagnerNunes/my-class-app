@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, SafeAreaView, Pressable, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, Image, SafeAreaView, Pressable, ScrollView, TouchableOpacity } from 'react-native'
 import { CheckBox } from 'react-native-elements';
 import React, { useState } from 'react';
 import { useFonts, Montserrat_900Black } from '@expo-google-fonts/montserrat';
@@ -16,7 +16,7 @@ export default function Login() {
 	})
 
     const [page, setPage] = useState("Login");
-    const [checked, setChecked] = useState({check1: false, check2: false});
+    const [checked, setChecked] = useState({aluno: false, professor: false});
 
     if(!fontLoaded) {
         return null;
@@ -72,18 +72,22 @@ export default function Login() {
                                     plc="Digite sua senha.."
                                     corBorda="#0496FF"
                                 />
-                                <Pressable onPress={() => alert("Recuperar senha")}>
-                                    <Text style={
-                                        {
-                                            color: '#555',
-                                            fontSize: 15,
-                                            marginTop: 5,
-                                            padding: 5,
-                                            textAlign: 'right',
-                                            textDecorationLine: 'underline',
-                                        }
-                                    }>Esqueci minha senha</Text>
-                                </Pressable>
+
+                                <View>
+                                    <Pressable onPress={() => alert("Recuperar senha")}>
+                                        <Text style={
+                                            {
+                                                color: '#555',
+                                                fontSize: 15,
+                                                marginTop: 5,
+                                                padding: 5,
+                                                textAlign: 'right',
+                                                textDecorationLine: 'underline',
+                                            }
+                                        }>Esqueci minha senha</Text>
+                                    </Pressable>
+                                </View>
+
                             </View>
 
 
@@ -113,8 +117,8 @@ export default function Login() {
                         </View>
 
                     </SafeAreaView>
-                ) : (
-                    // CADASTRO --------------------------------------------------
+                ) : (  //  -------------------------------------------------- CADASTRO --------------------------------------------------
+
                     <ScrollView style={styles.containerCampos}>
 
                         <View style={styles.containerCampos.campos}>
@@ -130,16 +134,16 @@ export default function Login() {
 
                                 <CheckBox
                                     title='Sou aluno'
-                                    checked={checked.check1}
+                                    checked={checked.aluno}
                                     onPress={() => setChecked(obj => {
-                                        return {...obj, check1: !checked.check1, check2: false }
+                                        return {...obj, aluno: !checked.aluno, professor: false }
                                     })}
                                 />
                                 <CheckBox
                                     title='Sou Professor'
-                                    checked={checked.check2}
+                                    checked={checked.professor}
                                     onPress={() => setChecked(obj => {
-                                        return {...obj, check1: false, check2: !checked.check2 }
+                                        return {...obj, aluno: false, professor: !checked.professor }
                                     })}
                                 />
 
@@ -166,7 +170,7 @@ export default function Login() {
                                     }
                                 }>Email</Text>
                                 <Input
-                                    plc="Digite seu nome completo.."
+                                    plc="Digite seu email.."
                                     corBorda="#0496FF"
                                 />
                             </View>
@@ -177,9 +181,9 @@ export default function Login() {
                                         fontSize: 17,
                                         height: 30,
                                     }
-                                }>Nova senha</Text>
+                                }>Senha</Text>
                                 <Input
-                                    plc="Digite seu nome completo.."
+                                    plc="Digite sua senha.."
                                     corBorda="#0496FF"
                                 />
                             </View>
@@ -192,7 +196,7 @@ export default function Login() {
                                     }
                                 }>Confirmar senha</Text>
                                 <Input
-                                    plc="Digite seu nome completo.."
+                                    plc="Digite sua senha.."
                                     corBorda="#0496FF"
                                 />
                             </View>
@@ -202,7 +206,7 @@ export default function Login() {
                             {
                                 display: 'flex',
                                 flexDirection: 'column',
-                                gap: 30,
+                                gap: 15,
                                 marginTop: 20,
                             }
                         }>
@@ -236,13 +240,13 @@ export default function Login() {
                     </ScrollView>
                 )
             }
-
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
+        backgroundColor: '#F9F9F9',
         flex: 1,
         padding: 5,
     },
