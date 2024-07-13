@@ -3,11 +3,9 @@ import React from 'react'
 
 const Button = ({nome, background, corBorda, widthBorda, func}) => {
 
-
   return (
     <Pressable
-        style={
-            {
+        style={{
                 alignItems: 'center',
                 backgroundColor: background,
                 borderRadius: 7,
@@ -15,9 +13,7 @@ const Button = ({nome, background, corBorda, widthBorda, func}) => {
                 height: 40,
                 justifyContent: 'center',
                 marginTop: 10,
-            }
-
-        }
+            }}
         onPress={func}
     >
         <Text style={

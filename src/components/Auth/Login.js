@@ -223,20 +223,6 @@ export default function Login() {
                             />
                         </View>
 
-                        <View style={{display: 'flex', alignItems: 'center'}}>
-                            <Image
-                                style={
-                                    {
-                                        height: 150,
-                                        marginTop: 30,
-                                        objectFit: 'contain',
-                                        width: 150,
-                                    }
-                                }
-                                source={require('../../images/img-estudante-cadastro.png')}
-                            />
-                        </View>
-
                     </ScrollView>
                 )
             }
